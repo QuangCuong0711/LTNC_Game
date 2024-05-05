@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1714877722 source:d:\dohoa\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1714501408 d:\dohoa\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1714499689 d:\dohoa\defs.h
+
