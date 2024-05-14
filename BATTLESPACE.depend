@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1715723120 source:d:\battlespace\graphics.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"graphics.h"
+
+1715723136 d:\battlespace\graphics.h
+	"ship.h"
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+
+1715708391 d:\battlespace\ship.h
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+
+1715708447 source:d:\battlespace\ship.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"ship.h"
+
+1715727328 source:d:\battlespace\main.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"ship.h"
+	"graphics.h"
+	"player.h"
+	"Enemy.h"
+
+1715726147 d:\battlespace\defs.h
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"ship.h"
+
+1715724447 d:\battlespace\player.h
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"ship.h"
+	"graphics.h"
+
+1715728256 source:d:\battlespace\player.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"ship.h"
+	"graphics.h"
+	"player.h"
+
+1715728174 source:d:\battlespace\enemy.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"ship.h"
+	"graphics.h"
+	"Enemy.h"
+
+1715724759 d:\battlespace\enemy.h
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"ship.h"
+	"graphics.h"
+
+1715726147 source:d:\battlespace\defs.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"ship.h"
+	"defs.h"
+
