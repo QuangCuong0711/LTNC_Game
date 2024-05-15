@@ -18,6 +18,13 @@ int main(int argc, char *argv[])
     Graphics graphics;
     graphics.init();
 
+
+    for(int i = 1 ; i <= 10 ; i++) {
+        P[0][i] = 1;
+        P[i][0] = 1;
+        P[11][i] =1;
+        P[i][11] = 1;
+    }
     SDL_Texture* MENU = graphics.loadTexture("MENU.png");
     graphics.prepareScene(MENU);
     Mix_Music *nhacnen = graphics.loadMusic("nhacnen.mp3");
@@ -89,7 +96,7 @@ int main(int argc, char *argv[])
                             graphics.thuyenbiphahuy(enemytau2,enemytau31,enemytau32,enemytau4,enemytau5,
                                                     C[14],C[11],C[8],C[5],C[2],0);
 
-                          
+
                             while(thangthua == 1) {
 
                                 SDL_GetMouseState(&x, &y);

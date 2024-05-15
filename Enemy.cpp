@@ -10,37 +10,37 @@
 using namespace std;
 
 void updateES(int x,int y){
-    if (ES.empty()) {
-        if (y - 1 >= 1) {
-            if ( P[x][y-1] == 0) {
+    if(ES.empty()) {
+        if(y-1>=1) {
+            if( P[x][y-1] == 0) {
 
                 ES.push_back(x);
                 ES.push_back(y - 1);
 
             }
-            else if (P[x][y-1] == 2 or P[x][y-1] == 31 or P[x][y-1] == 32 or P[x][y-1] == 4 or P[x][y-1] == 5) {
+            else if(P[x][y-1] == 2 or P[x][y-1] == 31 or P[x][y-1] == 32 or P[x][y-1] == 4 or P[x][y-1] == 5) {
                 ES.push_back(x);
                 ES.push_back(y - 1);
 
-                if (y - 2 >= 1) {
-                    if (P[x][y-2] == 0) {
+                if(y - 2 >= 1) {
+                    if(P[x][y-2] == 0) {
 
                         ES.push_back(x);
                         ES.push_back(y - 2);
 
                     }
-                    else if (P[x][y-2] == 2 or P[x][y-2] == 31 or P[x][y-2] == 32 or P[x][y-2] == 4 or P[x][y-2] == 5) {
+                    else if(P[x][y-2] == 2 or P[x][y-2] == 31 or P[x][y-2] == 32 or P[x][y-2] == 4 or P[x][y-2] == 5) {
                         ES.push_back(x);
                         ES.push_back(y - 2);
 
-                        if (y - 3 >= 1) {
-                            if (P[x][y-3] == 0) {
+                        if(y - 3 >= 1) {
+                            if(P[x][y-3] == 0) {
 
                                 ES.push_back(x);
                                 ES.push_back(y - 3);
 
                             }
-                            else if (P[x][y-3] == 2 or P[x][y-3] == 31 or P[x][y-3] == 32 or P[x][y-3] == 4 or P[x][y-3] == 5) {
+                            else if(P[x][y-3] == 2 or P[x][y-3] == 31 or P[x][y-3] == 32 or P[x][y-3] == 4 or P[x][y-3] == 5) {
                                 ES.push_back(x);
                                 ES.push_back(y - 3);
 
@@ -49,7 +49,7 @@ void updateES(int x,int y){
                                         ES.push_back(x);
                                         ES.push_back(y - 4);
                                     }
-                                    else if (P[x][y-4] == 2 or P[x][y-4] == 31 or P[x][y-4] == 32 or P[x][y-4] == 4 or P[x][y-4] == 5) {
+                                    else if(P[x][y-4] == 2 or P[x][y-4] == 31 or P[x][y-4] == 32 or P[x][y-4] == 4 or P[x][y-4] == 5) {
                                         ES.push_back(x);
                                         ES.push_back(y - 4);
                                     }
@@ -60,30 +60,30 @@ void updateES(int x,int y){
                 }
             }
         }
-        if (y + 1 <= 10) {
-            if (P[x][y + 1] == 0) {
+        if(y + 1 <= 10) {
+            if(P[x][y + 1] == 0) {
                 ES.push_back(x);
                 ES.push_back(y + 1);
             }
-            else if (P[x][y+1] == 2 or P[x][y+1] == 31 or P[x][y+1] == 32 or P[x][y+1] == 4 or P[x][y+1] == 5) {
+            else if(P[x][y+1] == 2 or P[x][y+1] == 31 or P[x][y+1] == 32 or P[x][y+1] == 4 or P[x][y+1] == 5) {
                 ES.push_back(x);
                 ES.push_back(y + 1);
 
-                if (y + 2 <= 10) {
-                    if (P[x][y + 2] == 0) {
+                if(y + 2 <= 10) {
+                    if(P[x][y + 2] == 0) {
                         ES.push_back(x);
                         ES.push_back(y + 2);
                     }
-                    else if (P[x][y+2] == 2 or P[x][y+2] == 31 or P[x][y+2] == 32 or P[x][y+2] == 4 or P[x][y+2] == 5) {
+                    else if(P[x][y+2] == 2 or P[x][y+2] == 31 or P[x][y+2] == 32 or P[x][y+2] == 4 or P[x][y+2] == 5) {
                         ES.push_back(x);
                         ES.push_back(y + 2);
 
-                        if (y + 3 <= 10) {
-                            if (P[x][y + 3] == 0) {
+                        if(y + 3 <= 10) {
+                            if(P[x][y + 3] == 0) {
                                 ES.push_back(x);
                                 ES.push_back(y + 3);
                             }
-                            else if (P[x][y+3] == 2 or P[x][y+3] == 31 or P[x][y+3] == 32 or P[x][y+3] == 4 or P[x][y+3] == 5) {
+                            else if(P[x][y+3] == 2 or P[x][y+3] == 31 or P[x][y+3] == 32 or P[x][y+3] == 4 or P[x][y+3] == 5) {
                                 ES.push_back(x);
                                 ES.push_back(y + 3);
 
@@ -92,7 +92,7 @@ void updateES(int x,int y){
                                         ES.push_back(x);
                                         ES.push_back(y + 4);
                                     }
-                                    else if (P[x][y+4] == 2 or P[x][y+4] == 31 or P[x][y+4] == 32 or P[x][y+4] == 4 or P[x][y+4] == 5) {
+                                    else if(P[x][y+4] == 2 or P[x][y+4] == 31 or P[x][y+4] == 32 or P[x][y+4] == 4 or P[x][y+4] == 5) {
                                         ES.push_back(x);
                                         ES.push_back(y + 4);
                                     }
@@ -103,30 +103,30 @@ void updateES(int x,int y){
                 }
             }
         }
-        if (x - 1 >= 1) {
-            if (P[x - 1][y] == 0) {
+        if(x - 1 >= 1) {
+            if(P[x - 1][y] == 0) {
                 ES.push_back(x - 1);
                 ES.push_back(y);
             }
-            else if (P[x-1][y] == 2 or P[x-1][y] == 31 or P[x-1][y] == 32 or P[x-1][y] == 4 or P[x-1][y] == 5) {
+            else if(P[x-1][y] == 2 or P[x-1][y] == 31 or P[x-1][y] == 32 or P[x-1][y] == 4 or P[x-1][y] == 5) {
                 ES.push_back(x - 1);
                 ES.push_back(y);
 
-                if (x - 2 >= 1) {
-                    if (P[x - 2][y] == 0) {
+                if(x - 2 >= 1) {
+                    if(P[x - 2][y] == 0) {
                         ES.push_back(x - 2);
                         ES.push_back(y);
                     }
-                    else if (P[x-2][y] == 2 or P[x-2][y] == 31 or P[x-2][y] == 32 or P[x-2][y] == 4 or P[x-2][y] == 5) {
+                    else if(P[x-2][y] == 2 or P[x-2][y] == 31 or P[x-2][y] == 32 or P[x-2][y] == 4 or P[x-2][y] == 5) {
                         ES.push_back(x - 2);
                         ES.push_back(y);
 
-                        if (x - 3 >= 1) {
-                            if (P[x - 3][y] == 0) {
+                        if(x - 3 >= 1) {
+                            if(P[x - 3][y] == 0) {
                                 ES.push_back(x - 3);
                                 ES.push_back(y);
                             }
-                            else if (P[x-3][y] == 2 or P[x-3][y] == 31 or P[x-3][y] == 32 or P[x-3][y] == 4 or P[x-3][y] == 5) {
+                            else if(P[x-3][y] == 2 or P[x-3][y] == 31 or P[x-3][y] == 32 or P[x-3][y] == 4 or P[x-3][y] == 5) {
                                 ES.push_back(x - 3);
                                 ES.push_back(y);
 
@@ -135,7 +135,7 @@ void updateES(int x,int y){
                                         ES.push_back(x - 4);
                                         ES.push_back(y);
                                     }
-                                    else if (P[x-4][y] == 2 or P[x-4][y] == 31 or P[x-4][y] == 32 or P[x-4][y] == 4 or P[x-4][y] == 5) {
+                                    else if(P[x-4][y] == 2 or P[x-4][y] == 31 or P[x-4][y] == 32 or P[x-4][y] == 4 or P[x-4][y] == 5) {
                                         ES.push_back(x - 4);
                                         ES.push_back(y);
                                     }
@@ -146,39 +146,39 @@ void updateES(int x,int y){
                 }
             }
         }
-        if (x + 1 <= 10) {
+        if(x + 1 <= 10) {
             if (P[x + 1][y] == 0) {
                 ES.push_back(x + 1);
                 ES.push_back(y);
             }
-            else if (P[x+1][y] == 2 or P[x+1][y] == 31 or P[x+1][y] == 32 or P[x+1][y] == 4 or P[x+1][y] == 5) {
+            else if(P[x+1][y] == 2 or P[x+1][y] == 31 or P[x+1][y] == 32 or P[x+1][y] == 4 or P[x+1][y] == 5) {
                 ES.push_back(x + 1);
                 ES.push_back(y);
 
-                if (x + 2 <= 10) {
+                if(x + 2 <= 10) {
                     if (P[x + 2][y] == 0) {
                         ES.push_back(x + 2);
                         ES.push_back(y);
                     }
-                    else if (P[x+2][y] == 2 or P[x+2][y] == 31 or P[x+2][y] == 32 or P[x+2][y] == 4 or P[x+2][y] == 5) {
+                    else if(P[x+2][y] == 2 or P[x+2][y] == 31 or P[x+2][y] == 32 or P[x+2][y] == 4 or P[x+2][y] == 5) {
                         ES.push_back(x + 2);
                         ES.push_back(y);
 
-                        if (x + 3 <= 10) {
-                            if (P[x + 3][y] == 0) {
+                        if(x + 3 <= 10) {
+                            if(P[x + 3][y] == 0) {
                                 ES.push_back(x+3);
                                 ES.push_back(y);
                             }
-                            else if (P[x+3][y] == 2 or P[x+3][y] == 31 or P[x+3][y] == 32 or P[x+3][y] == 4 or P[x+3][y] == 5) {
+                            else if(P[x+3][y] == 2 or P[x+3][y] == 31 or P[x+3][y] == 32 or P[x+3][y] == 4 or P[x+3][y] == 5) {
                                 ES.push_back(x + 3);
                                 ES.push_back(y);
 
                                 if(x + 4 <= 10) {
-                                    if (P[x + 4][y] == 0) {
+                                    if(P[x + 4][y] == 0) {
                                         ES.push_back(x + 4);
                                         ES.push_back(y);
                                     }
-                                    else if (P[x+4][y] == 2 or P[x+4][y] == 31 or P[x+4][y] == 32 or P[x+4][y] == 4 or P[x+4][y] == 5) {
+                                    else if(P[x+4][y] == 2 or P[x+4][y] == 31 or P[x+4][y] == 32 or P[x+4][y] == 4 or P[x+4][y] == 5) {
                                         ES.push_back(x + 4);
                                         ES.push_back(y);
                                     }
@@ -195,6 +195,7 @@ void updateES(int x,int y){
 void EnemyShooting(Graphics  graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
         SDL_Delay(1000);
         int a, b,n=1;
+
         if(!ES.empty()) {
             a =  ES.front();
             ES.erase(ES.begin());
@@ -211,6 +212,10 @@ void EnemyShooting(Graphics  graphics,SDL_Texture* dando,SDL_Texture* dantrang) 
 
         while(check) {
             if(P[a][b] == 3 or P[a][b] == 1) {
+                a = 1+(rand()%10);
+                b = 1+(rand()%10);
+            }
+            if(P[a+1][b] == 1 and P[a][b+1] == 1 and P[a-1][b] == 1 and P[a][b-1] == 1){
                 a = 1+(rand()%10);
                 b = 1+(rand()%10);
             }

@@ -15,8 +15,8 @@ Mix_Chunk *bantrung ;
 Mix_Chunk *banxit ;
 int thangthua =1;
 
-int P[11][11] = {0};
-int E[11][11] = {0};
+int P[12][12] = {0};
+int E[12][12] = {0};
 
 ship tau2(64,32,644,390,0,2);
 ship tau31(96,32,644,318,0,3);
@@ -34,15 +34,16 @@ vector<int> Computer() {
 
     vector<int> C;
     int x, y, pos;
+
     srand(time(0));
 
     for ( int i = 1; i <= 5; i++ ) {
 
-        x = 1 + (rand() % 10);
-        y = 1 + (rand() % 10);
+        x= 1 + (rand() % 10);
+        y= 1 + (rand() % 10);
         pos = rand() % 2;
 
-        bool repeat_input = false;
+        bool r = false;
 
         while(true) {
             if (E[x][y] == 0) break;
@@ -55,10 +56,10 @@ vector<int> Computer() {
 			}
 		}
 		while (true) {
-			if (pos == 0) {
-				if (i == 1) {
-					if (x  < 7) {
-						if (E[x+1][y] == 0 and E[x+2][y] == 0 and E[x+3][y] == 0 and E[x+4][y] == 0) {
+			if(pos==0) {
+				if (i==1) {
+					if(x<7) {
+						if(E[x+1][y] == 0 and E[x+2][y] == 0 and E[x+3][y] == 0 and E[x+4][y] == 0) {
 
 							E[x][y] = 5;
 							E[x+1][y] = 5;
@@ -73,16 +74,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 2) {
-					if (x  < 8) {
-						if (E[x+1][y] == 0 and E[x+2][y] == 0 and E[x+3][y] == 0) {
+				else if(i == 2) {
+					if(x  < 8) {
+						if(E[x+1][y] == 0 and E[x+2][y] == 0 and E[x+3][y] == 0) {
 
 							E[x][y] = 4;
 							E[x+1][y] = 4;
@@ -96,16 +97,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 3) {
-					if (x < 9) {
-						if (E[x+1][y] == 0 and E[x+2][y] == 0) {
+				else if(i == 3) {
+					if(x < 9) {
+						if(E[x+1][y] == 0 and E[x+2][y] == 0) {
 
 							E[x][y] = 32;
 							E[x+1][y] = 32;
@@ -118,16 +119,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 4) {
-					if (x < 9) {
-						if (E[x+1][y] == 0 and E[x+2][y] == 0) {
+				else if(i == 4) {
+					if(x < 9) {
+						if(E[x+1][y] == 0 and E[x+2][y] == 0) {
 
 							E[x][y] = 31;
 							E[x+1][y] = 31;
@@ -140,16 +141,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 5) {
-					if (x < 10) {
-						if (E[x+1][y] == 0) {
+				else if(i == 5) {
+					if(x < 10) {
+						if(E[x+1][y] == 0) {
 
                             E[x][y] = 2;
 							E[x+1][y] = 2;
@@ -161,18 +162,18 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
 			}
-			else if (pos == 1) {
-				if (i == 1) {
-					if (y < 7) {
-						if (E[x][y+1] == 0 and E[x][y+2] == 0 and E[x][y+3] == 0 and E[x][y+4] == 0) {
+			else if(pos == 1) {
+				if(i == 1) {
+					if(y < 7) {
+						if(E[x][y+1] == 0 and E[x][y+2] == 0 and E[x][y+3] == 0 and E[x][y+4] == 0) {
 
 							E[x][y] = 5;
 							E[x][y+1] = 5;
@@ -187,16 +188,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 2) {
-                    if (y < 8) {
-						if (E[x][y+1] == 0 and E[x][y+2] == 0 and E[x][y+3] == 0) {
+				else if(i == 2) {
+                    if(y < 8) {
+						if(E[x][y+1] == 0 and E[x][y+2] == 0 and E[x][y+3] == 0) {
 
 							E[x][y] = 4;
 							E[x][y+1] = 4;
@@ -210,16 +211,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 3) {
-					if (y < 9) {
-						if (E[x][y+1] == 0 and E[x][y+2] == 0) {
+				else if(i == 3) {
+					if(y < 9) {
+						if(E[x][y+1] == 0 and E[x][y+2] == 0) {
 
 							E[x][y] = 32;
 							E[x][y+1] = 32;
@@ -232,16 +233,16 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 4) {
-					if (y < 9) {
-						if (E[x][y+1] == 0 and E[x][y+2] == 0) {
+				else if(i == 4) {
+					if(y < 9) {
+						if(E[x][y+1] == 0 and E[x][y+2] == 0) {
 
 							E[x][y] = 31;
 							E[x][y+1] = 31;
@@ -254,15 +255,15 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
-				else if (i == 5) {
-					if (y < 10) {
+				else if(i == 5) {
+					if(y < 10) {
 						if (E[x][y+1] == 0) {
 
 							E[x][y] = 2;
@@ -275,17 +276,17 @@ vector<int> Computer() {
 							break;
 						}
 						else {
-							repeat_input = true;
+							r = true;
 						}
 					}
 					else {
-						repeat_input = true;
+						r = true;
 					}
 				}
 			}
 
 
-				if (repeat_input) {
+				if (r) {
 					srand((unsigned int)time(NULL));
 
 					x = 1 + (rand() % 10);
