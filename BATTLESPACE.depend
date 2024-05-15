@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1715723120 source:d:\battlespace\graphics.cpp
+1715733024 source:d:\battlespace\graphics.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -12,20 +12,20 @@
 	<SDL_image.h>
 	<SDL_mixer.h>
 
-1715708391 d:\battlespace\ship.h
+1715741370 d:\battlespace\ship.h
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
 
-1715708447 source:d:\battlespace\ship.cpp
+1715741361 source:d:\battlespace\ship.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
 	"ship.h"
 
-1715727328 source:d:\battlespace\main.cpp
+1715750580 source:d:\battlespace\main.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -36,14 +36,14 @@
 	"player.h"
 	"Enemy.h"
 
-1715726147 d:\battlespace\defs.h
+1715749040 d:\battlespace\defs.h
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
 	"ship.h"
 
-1715724447 d:\battlespace\player.h
+1715749058 d:\battlespace\player.h
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -52,7 +52,7 @@
 	"ship.h"
 	"graphics.h"
 
-1715728256 source:d:\battlespace\player.cpp
+1715749638 source:d:\battlespace\player.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -62,7 +62,7 @@
 	"graphics.h"
 	"player.h"
 
-1715728174 source:d:\battlespace\enemy.cpp
+1715743669 source:d:\battlespace\enemy.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -81,7 +81,7 @@
 	"ship.h"
 	"graphics.h"
 
-1715726147 source:d:\battlespace\defs.cpp
+1715750211 source:d:\battlespace\defs.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>

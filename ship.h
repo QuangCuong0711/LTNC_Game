@@ -21,6 +21,9 @@ struct ship {
         ship(int _w = 0, int _h = 0, int _x = 0, int _y = 0, int _pos =0 , int _live = 0) ;
 
         void fix() ;
+
+        void update(int _w , int _h , int _x , int _y , int _pos  , int _live);
+
 };
 
 

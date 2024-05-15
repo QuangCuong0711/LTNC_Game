@@ -192,7 +192,7 @@ void updateES(int x,int y){
     }
 }
 
-void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
+void EnemyShooting(Graphics  graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
         SDL_Delay(1000);
         int a, b,n=1;
         if(!ES.empty()) {
@@ -223,6 +223,7 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             a = ( ( a - 1 ) * 35.4 + 89);
             graphics.renderTexture(dantrang,b,a);
             graphics.presentScene();
+            graphics.play(banxit);
             n=0;
         }
         else if ( P[a][b] == 2 ) {
@@ -233,6 +234,7 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             tau2.live--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Enemycheck(graphics);
         }
         else if ( P[a][b] == 31 ) {
@@ -243,6 +245,7 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             tau31.live--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Enemycheck(graphics);
         }
         else if ( P[a][b] == 32 ) {
@@ -253,6 +256,7 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             tau32.live--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Enemycheck(graphics);
         }
         else if ( P[a][b] == 4 ) {
@@ -263,6 +267,7 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             tau4.live--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Enemycheck(graphics);
         }
         else if ( P[a][b] == 5 ) {
@@ -273,9 +278,10 @@ void EnemyShooting(Graphics graphics,SDL_Texture* dando,SDL_Texture* dantrang) {
             tau5.live--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Enemycheck(graphics);
         }
-    if(n) {
+    if(n==1 and thangthua ==1) {
             EnemyShooting(graphics,dando,dantrang);
     }
 }
@@ -322,7 +328,11 @@ void Enemycheck(Graphics graphics){
     }
     if(tau2.live == 0 and tau31.live == 0 and tau32.live == 0 and tau4.live == 0 and tau5.live == 0)  {
 
-        graphics.quit();
+
+        SDL_Texture* Lose = graphics.loadTexture("Lose.png");
+        graphics.prepareScene(Lose);
+        graphics.presentScene();
+        thangthua =0;
 
     }
 }

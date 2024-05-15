@@ -75,7 +75,7 @@ void setup5 (ship tau2, ship tau31, ship tau32, ship tau4, ship tau5) {
 }
 
 void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Texture* dantrang) {
-
+    if(thangthua != 1) return;
     int n = 1;
     int b = ((x-546)/35.3 + 1);
     int a = ((y-89)/35.4 + 1);
@@ -86,6 +86,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             a = ((a-1)*35.4 + 89);
             graphics.renderTexture(dantrang,b,a);
             graphics.presentScene();
+            graphics.play(banxit);
             n=0;
         }
         else if (E[a][b] == 1 ){
@@ -126,6 +127,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             mauthuyen2enemy--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
         }
         else if ( E[a][b] == 31 ) {
@@ -135,6 +137,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             mauthuyen31enemy--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
         }
         else if ( E[a][b] == 32 ) {
@@ -144,6 +147,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             mauthuyen32enemy--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
         }
         else if ( E[a][b] == 4 ) {
@@ -153,6 +157,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             mauthuyen4enemy--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
         }
         else if ( E[a][b] == 5 ) {
@@ -162,6 +167,7 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
             mauthuyen5enemy--;
             graphics.renderTexture(dando,b,a);
             graphics.presentScene();
+            graphics.play(bantrung);
             Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
         }
     }
@@ -178,8 +184,9 @@ void PlayerShooting(Graphics graphics,int x , int y,SDL_Texture* dando,SDL_Textu
                     check1 = false;
                 }
             }
+
     }
-    if(n==1) {
+    if(n==1 ) {
             SDL_Event k;
             SDL_PollEvent(&k);
 
@@ -218,6 +225,12 @@ void Playercheck(Graphics graphics , SDL_Texture* enemytau2,SDL_Texture* enemyta
         graphics.presentScene();
     }
     if(mauthuyen2enemy == 0 and mauthuyen31enemy == 0 and mauthuyen32enemy == 0 and mauthuyen4enemy == 0 and  mauthuyen5enemy == 0)  {
-        graphics.quit();
+
+        SDL_Delay(1000);
+        SDL_Texture* Win = graphics.loadTexture("Win.png");
+        graphics.prepareScene(Win);
+        graphics.presentScene();
+        thangthua=2;
+        return;
     }
 }

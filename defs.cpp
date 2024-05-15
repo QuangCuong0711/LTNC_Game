@@ -11,6 +11,10 @@ int mauthuyen2enemy =2,mauthuyen31enemy = 3, mauthuyen32enemy = 3, mauthuyen4ene
 
 bool song[5] = {true,true,true,true,true} ;
 
+Mix_Chunk *bantrung ;
+Mix_Chunk *banxit ;
+int thangthua =1;
+
 int P[11][11] = {0};
 int E[11][11] = {0};
 
@@ -305,3 +309,37 @@ void waitUntilKeyPressed() {
 
 vector<int> C = Computer();
 vector<int> ES ;
+
+void reset() {
+    mauthuyen2enemy =2;
+    mauthuyen31enemy = 3;
+    mauthuyen32enemy = 3;
+    mauthuyen4enemy = 4;
+    mauthuyen5enemy = 5;
+
+    thangthua =1;
+    fill(song,song+5,true);
+
+    for(int i =1;i<=10;i++) {
+        for(int j =1 ;j<=10;j++) {
+            P[i][j]=0;
+        }
+    }
+
+    for(int i =1;i<=10;i++) {
+        for(int j =1 ;j<=10;j++) {
+            E[i][j]=0;
+        }
+    }
+
+    tau2.update(64,32,644,390,0,2);
+    tau31.update(96,32,644,318,0,3);
+    tau32.update(96,32,644,246,0,3);
+    tau4.update(128,32,644,177,0,4);
+    tau5.update(160,32,644,103,0,5);
+
+    C.clear();
+    ES.clear();
+
+    C=Computer();
+}

@@ -13,8 +13,10 @@ const int SCREEN_WIDTH = 960;
 const int SCREEN_HEIGHT = 540;
 
 extern int mauthuyen2enemy,mauthuyen31enemy,mauthuyen32enemy,mauthuyen4enemy,mauthuyen5enemy;
-
+extern Mix_Chunk *bantrung ;
+extern Mix_Chunk *banxit ;
 extern bool song[5]  ;
+extern int thangthua;
 
 extern int P[11][11];
 extern int E[11][11];
@@ -38,6 +40,8 @@ extern vector<int> ES ;
 
 
 void waitUntilKeyPressed() ;
+
+void reset() ;
 
 #define WINDOW_TITLE "BattleSpace"
 

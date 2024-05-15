@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 
     SDL_Texture* MENU = graphics.loadTexture("MENU.png");
     graphics.prepareScene(MENU);
-
+    Mix_Music *nhacnen = graphics.loadMusic("nhacnen.mp3");
+    graphics.play(nhacnen);
     graphics.presentScene();
 
     SDL_Event event;
@@ -62,14 +63,14 @@ int main(int argc, char *argv[])
 
                 SDL_Event e2;
 
-                while (true) {
+                while (thangthua==1) {
                     SDL_GetMouseState(&x, &y);
                     SDL_PollEvent(&e2);
 
                     graphics.xepthuyen(tau2,tau31,tau32,tau4,tau5,x,y,e2,khay,PLAYSETUP);
 
                     if (e2.type == SDL_MOUSEBUTTONDOWN) {
-                        if((x >=  861 and x<= 918) and (y >= 456 and y <= 513)) {
+                        if((x >=  861 and x<= 918) and (y >= 456 and y <= 513))  {
 
                             PLAYSETUP = graphics.loadTexture("Play.png");
                             graphics.prepareScene(PLAYSETUP);
@@ -77,6 +78,8 @@ int main(int argc, char *argv[])
 
                             SDL_Texture* dando = graphics.loadTexture("dando.png");
                             SDL_Texture* dantrang = graphics.loadTexture("dantrang.png");
+                            banxit = graphics.loadSound("banxit.wav");
+                            bantrung = graphics.loadSound("bantrung.mp3");
 
                             setup5(tau2,tau31,tau32,tau4,tau5);
 
@@ -86,34 +89,56 @@ int main(int argc, char *argv[])
                             graphics.thuyenbiphahuy(enemytau2,enemytau31,enemytau32,enemytau4,enemytau5,
                                                     C[14],C[11],C[8],C[5],C[2],0);
 
-
-                            while(true) {
+                          
+                            while(thangthua == 1) {
 
                                 SDL_GetMouseState(&x, &y);
                                 SDL_PollEvent(&e2);
 
                                 if(e2.type == SDL_MOUSEBUTTONDOWN) {
+                                    if(thangthua == 1) PlayerShooting(graphics,x,y,dando,dantrang);
+                                    if (thangthua == 1) EnemyShooting(graphics, dando, dantrang);
 
-                                    PlayerShooting(graphics,x,y,dando,dantrang);
-                                    Playercheck(graphics,enemytau2,enemytau31,enemytau32,enemytau4,enemytau5);
-                                    EnemyShooting( graphics, dando, dantrang);
-                                    Enemycheck(graphics);
+                                    }
 
                                 }
                             }
+                            if(thangthua == 0) {
+                                        SDL_Texture* Lose = graphics.loadTexture("Lose.png");
+                                        graphics.prepareScene(Lose);
+                                        graphics.presentScene();
+                                        break;
+                                    }
+                            if(thangthua == 2) {
+                                        SDL_Texture* Win = graphics.loadTexture("Win.png");
+                                        graphics.prepareScene(Win);
+                                        graphics.presentScene();
+                                        break;
+
+
                         }
                     }
                 }
             }
-            if(event.type==SDL_MOUSEBUTTONUP){
-                    if((x>=25 and x<=81) and (y>=32 and y<=88)){
+        }
 
-                        graphics.prepareScene(MENU);
-                        graphics.presentScene();
+        if(event.type==SDL_MOUSEBUTTONUP){
+            if((x>=25 and x<=81) and (y>=32 and y<=88)){
 
-                    }
-                }
+                graphics.prepareScene(MENU);
+                graphics.presentScene();
             }
+            else if ((y>440 and y<= 513)and (x>25 and x<=81)) {
+                graphics.quit();
+            }
+            else if((x >=  850 and x<= 918) and (y >= 440 and y <= 513)) {
+                reset();
+                graphics.prepareScene(MENU);
+                graphics.presentScene();
+            }
+        }
+
+
         SDL_Delay(100);
     }
     graphics.quit();

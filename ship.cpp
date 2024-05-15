@@ -30,3 +30,12 @@ void ship::fix() {
     if ( y + h >437) y = 437-h ;
     else if ( y < 88) y =88;
 }
+
+void ship::update(int _w , int _h , int _x , int _y , int _pos  , int _live) {
+    w = _w;
+    h = _h;
+    x = _x;
+    y = _y;
+    pos = _pos;
+    live =_live;
+}
