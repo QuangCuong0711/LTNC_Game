@@ -16,6 +16,6 @@ GAME : BATTLESPACE
 6. Lí do bảo vệ ngưỡng điểm :
     - Thuật toán đặt thuyền và địch bắn( địch sẽ bắn random nếu trúng sẽ check bốn hướng nếu tiêu diệt sẽ bắn random tiếp chứ không check đủ mới random , không bắn vào ô đã bị chặn 4 hướng ...)
     - Game tự code , tự nghĩ logic , vẽ đồ họa
-7.Ý tưởng tham khảo :
+7. Ý tưởng tham khảo :
     - Game Hasbro's BATTLESHIP trên Steam : https://steamcommunity.com/app/893050
     - Các hàm xử lí đồ họa cơ bản của cô Châu
